@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shopsphere/features/authentication/screens/signup/signup.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 
 import '../../../../../utils/constants/text_strings.dart';
@@ -14,8 +15,7 @@ class SLoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: SSizes.spaceBtwSections),
+        padding: const EdgeInsets.symmetric(vertical: SSizes.spaceBtwSections),
         child: Column(
           children: [
             TextFormField(
@@ -44,8 +44,7 @@ class SLoginForm extends StatelessWidget {
                   ],
                 ),
                 TextButton(
-                    onPressed: () {},
-                    child: const Text(STexts.forgetPassword))
+                    onPressed: () {}, child: const Text(STexts.forgetPassword))
               ],
             ),
             const SizedBox(
@@ -62,7 +61,7 @@ class SLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const SignupScreen()),
                   child: const Text(STexts.createAccount)),
             ),
           ],
