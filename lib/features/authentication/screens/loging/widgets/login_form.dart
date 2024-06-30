@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shopsphere/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:shopsphere/features/authentication/screens/signup/signup.dart';
+import 'package:shopsphere/navigation_menu.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 
 import '../../../../../utils/constants/text_strings.dart';
@@ -44,7 +46,8 @@ class SLoginForm extends StatelessWidget {
                   ],
                 ),
                 TextButton(
-                    onPressed: () {}, child: const Text(STexts.forgetPassword))
+                    onPressed: () => Get.to(() => const ForgetPassword()),
+                    child: const Text(STexts.forgetPassword))
               ],
             ),
             const SizedBox(
@@ -53,7 +56,8 @@ class SLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text(STexts.signIn)),
+                  onPressed: () => Get.to(() => const NavigationMenu()),
+                  child: const Text(STexts.signIn)),
             ),
             const SizedBox(
               height: SSizes.spaceBtwItems,
