@@ -12,6 +12,10 @@ class NavigationMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
     final darkMode = SHelperFunctions.isDarkMode(context);
+
+    debugPrint("Dark Mode: $darkMode");
+    debugPrint("Theme Brightness: ${Theme.of(context).brightness}");
+
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
@@ -27,8 +31,7 @@ class NavigationMenu extends StatelessWidget {
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
             NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-            NavigationDestination(
-                icon: Icon(Iconsax.heart), label: 'Whishlist'),
+            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
             NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile '),
           ],
         ),
