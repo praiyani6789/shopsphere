@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:shopsphere/utils/theme/custom_themes/checkbox_theme.dart';
 import 'package:shopsphere/utils/theme/custom_themes/elevated_button_theme.dart';
@@ -14,7 +15,7 @@ class SAppTheme {
     fontFamily: 'Poppins',
     brightness: Brightness.light,
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: SColors.white,
     textTheme: STextTheme.lightTextTheme,
     checkboxTheme: SCheckboxThem.lightCheckboxTheme,
     bottomSheetTheme: SBottomSheetTheme.lightBottomSheetTheme,
@@ -25,9 +26,9 @@ class SAppTheme {
   static ThemeData dartTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: SColors.black,
     textTheme: STextTheme.darkTextTheme,
     checkboxTheme: SCheckboxThem.darkCheckboxTheme,
     bottomSheetTheme: SBottomSheetTheme.darkBottomSheetTheme,

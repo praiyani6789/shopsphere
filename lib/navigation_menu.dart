@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shopsphere/features/shop/screens/home/home.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/helpers/helper_functions.dart';
+import 'features/shop/screens/home/home.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -12,9 +12,6 @@ class NavigationMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
     final darkMode = SHelperFunctions.isDarkMode(context);
-
-    debugPrint("Dark Mode: $darkMode");
-    debugPrint("Theme Brightness: ${Theme.of(context).brightness}");
 
     return Scaffold(
       bottomNavigationBar: Obx(

@@ -8,9 +8,9 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
   const SAppBar(
       {super.key,
       this.title,
-      this.showBackArrow = true,
-      this.leadingIcon,
       this.actions,
+      this.leadingIcon,
+      this.showBackArrow = true,
       this.leadingOnPressed});
 
   final Widget? title;
@@ -24,6 +24,7 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: SSizes.md),
       child: AppBar(
+        backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         leading: showBackArrow
             ? IconButton(

@@ -33,6 +33,7 @@ class SPrimaryHeaderContainer extends StatelessWidget {
                 child: SCircularContainer(
                     backgroundColor: SColors.white.withOpacity(0.1)),
               ),
+              child,
             ],
           ),
         ),
