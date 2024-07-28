@@ -46,7 +46,8 @@ class HomeScreen extends StatelessWidget {
                           //categarie
                           SHomeCategories(),
                         ],
-                      ))
+                      )),
+                  const SizedBox(height: SSizes.spaceBtwSections),
                 ],
               ),
             ),
@@ -69,7 +70,10 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: SSizes.spaceBtwSections),
 
                   //Heading
-                  SSectionHeading(title: 'Popular Products', onPressed: (){},),
+                  SSectionHeading(
+                    title: 'Popular Products',
+                    onPressed: () {},
+                  ),
                   SizedBox(height: SSizes.spaceBtwItems),
 
                   //Popular Products

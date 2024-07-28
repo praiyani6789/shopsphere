@@ -9,7 +9,7 @@ class SVerticalImageText extends StatelessWidget {
     required this.image,
     required this.title,
     this.textColor = SColors.white,
-    this.backgroundColor = SColors.white,
+    this.backgroundColor,
     this.onTap,
   });
 
@@ -47,9 +47,7 @@ class SVerticalImageText extends StatelessWidget {
             ),
 
             //Text
-            const SizedBox(
-              height: SSizes.spaceBtwItems / 2,
-            ),
+            const SizedBox(height: SSizes.spaceBtwItems / 2),
             SizedBox(
               width: 55,
               child: Text(

@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
+import '../../constants/colors.dart';
+import '../../constants/sizes.dart';
 
-//light & dark theme button
+/* -- Light & Dark Elevated Button Themes -- */
 class SElevatedButtonTheme {
-  SElevatedButtonTheme._();
+  SElevatedButtonTheme._(); //To avoid creating instances
 
-  //ligth theme
-  static final lightEtevatedButtonTheme = ElevatedButtonThemeData(
+
+  /* -- Light Theme -- */
+  static final lightElevatedButtonTheme  = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: Colors.white,
-      backgroundColor: Colors.blue,
-      disabledForegroundColor: Colors.grey,
-      disabledBackgroundColor: Colors.grey,
-      side: const BorderSide(color: Colors.blue),
-      padding: const EdgeInsets.symmetric(vertical: 18),
-      textStyle: const TextStyle(
-          fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      foregroundColor: SColors.light,
+      backgroundColor: SColors.primary,
+      disabledForegroundColor: SColors.darkGrey,
+      disabledBackgroundColor: SColors.buttonDisabled,
+      side: const BorderSide(color: SColors.primary),
+      padding: const EdgeInsets.symmetric(vertical: SSizes.buttonHeight),
+      textStyle: const TextStyle(fontSize: 16, color: SColors.textWhite, fontWeight: FontWeight.w600),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(SSizes.buttonRadius)),
     ),
   );
 
-
-  //dark theme
-  static final darkEtevatedButtonTheme = ElevatedButtonThemeData(
+  /* -- Dark Theme -- */
+  static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: Colors.white,
-      backgroundColor: Colors.blue,
-      disabledForegroundColor: Colors.grey,
-      disabledBackgroundColor: Colors.grey,
-      side: const BorderSide(color: Colors.blue),
-      padding: const EdgeInsets.symmetric(vertical: 18),
-      textStyle: const TextStyle(
-          fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      foregroundColor: SColors.light,
+      backgroundColor: SColors.primary,
+      disabledForegroundColor: SColors.darkGrey,
+      disabledBackgroundColor: SColors.darkerGrey,
+      side: const BorderSide(color: SColors.primary),
+      padding: const EdgeInsets.symmetric(vertical: SSizes.buttonHeight),
+      textStyle: const TextStyle(fontSize: 16, color: SColors.textWhite, fontWeight: FontWeight.w600),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(SSizes.buttonRadius)),
     ),
   );
 }

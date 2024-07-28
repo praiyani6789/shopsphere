@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-
+import 'package:shopsphere/utils/constants/colors.dart';
 class SBottomSheetTheme {
   SBottomSheetTheme._();
 
   static BottomSheetThemeData lightBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor: Colors.white,
-    modalBackgroundColor: Colors.white,
+    backgroundColor: SColors.white,
+    modalBackgroundColor: SColors.white,
     constraints: const BoxConstraints(minWidth: double.infinity),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
   );
+
   static BottomSheetThemeData darkBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor: Colors.black,
-    modalBackgroundColor: Colors.black,
+    backgroundColor: SColors.black,
+    modalBackgroundColor: SColors.black,
     constraints: const BoxConstraints(minWidth: double.infinity),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
   );

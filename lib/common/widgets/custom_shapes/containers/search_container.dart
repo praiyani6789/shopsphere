@@ -40,7 +40,10 @@ class SSearchContainer extends StatelessWidget {
                   : Colors.transparent,
               borderRadius: BorderRadius.circular(SSizes.cardRadiusLg),
               border: showBorder
-                  ? Border.all(color: dark ? SColors.dark : SColors.grey)
+                  ? Border.all(
+                      color: dark
+                          ? const Color.fromARGB(255, 127, 127, 127)
+                          : SColors.grey)
                   : null,
             ),
             child: Row(

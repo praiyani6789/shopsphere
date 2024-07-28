@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 
 class SRoundedImage extends StatelessWidget {

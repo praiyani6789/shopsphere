@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopsphere/utils/constants/colors.dart';
-import 'package:shopsphere/utils/constants/sizes.dart';
+
+import '../../constants/colors.dart';
+import '../../constants/sizes.dart';
 
 /* -- Light & Dark Outlined Button Themes -- */
 class SOutlinedButtonTheme {

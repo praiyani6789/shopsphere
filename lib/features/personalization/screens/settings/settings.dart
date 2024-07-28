@@ -1,0 +1,131 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:shopsphere/common/widgets/appbar/appbar.dart';
+import 'package:shopsphere/common/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:shopsphere/common/widgets/images/s_circular_images.dart';
+import 'package:shopsphere/common/widgets/list_tiles/settings_menu_tile.dart';
+import 'package:shopsphere/common/widgets/list_tiles/user_profile_tile.dart';
+import 'package:shopsphere/common/widgets/texts/section_heading.dart';
+import 'package:shopsphere/features/personalization/screens/profile/profile.dart';
+import 'package:shopsphere/utils/constants/colors.dart';
+import 'package:shopsphere/utils/constants/image_strings.dart';
+import 'package:shopsphere/utils/constants/sizes.dart';
+
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //Header
+            SPrimaryHeaderContainer(
+                child: Column(
+              children: [
+                //AppBar
+                SAppBar(
+                  title: Text(
+                    'Account',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineMedium!
+                        .apply(color: SColors.white),
+                  ),
+                ),
+
+                //User Profile Card
+                SUserProfileTile(
+                    onPressed: () => Get.to(() => const ProfileScreen())),
+                const SizedBox(height: SSizes.spaceBtwSections),
+              ],
+            )),
+
+            //Body
+            Padding(
+              padding: EdgeInsets.all(SSizes.defaultSpace),
+              child: Column(
+                children: [
+                  //Account Settings
+                  SSectionHeading(
+                      title: 'Account Settings', showActionButton: false),
+                  SizedBox(height: SSizes.spaceBtwItems),
+
+                  SSettingsMenuTile(
+                      icon: Iconsax.safe_home,
+                      title: 'My Addresses',
+                      subTitle: 'Set shopping delivery address'),
+                  SSettingsMenuTile(
+                      icon: Iconsax.shopping_cart,
+                      title: 'My Cart',
+                      subTitle: 'Add, remove products and move to chechout'),
+                  SSettingsMenuTile(
+                      icon: Iconsax.bag_tick,
+                      title: 'My Orders',
+                      subTitle: 'In-progress and Complete Orders'),
+                  SSettingsMenuTile(
+                      icon: Iconsax.bank,
+                      title: 'My Account',
+                      subTitle: 'Withdraw balance to registered bank account'),
+                  SSettingsMenuTile(
+                      icon: Iconsax.discount_shape,
+                      title: 'My Coupons',
+                      subTitle: 'List of all the discounted coupons'),
+                  SSettingsMenuTile(
+                      icon: Iconsax.notification,
+                      title: 'Notifications',
+                      subTitle: 'Set any kind of notification message'),
+                  SSettingsMenuTile(
+                      icon: Iconsax.security_card,
+                      title: 'Account Privacy',
+                      subTitle: 'Manage data usage and connected accounts'),
+
+                  //App Settings
+                  SizedBox(height: SSizes.spaceBtwSections),
+                  SSectionHeading(
+                      title: 'App Settings', showActionButton: false),
+                  SizedBox(height: SSizes.spaceBtwItems),
+                  SSettingsMenuTile(
+                      icon: Iconsax.document_upload,
+                      title: 'Load Data',
+                      subTitle: 'Upload Data to your Cloud Firebase'),
+                  SSettingsMenuTile(
+                    icon: Iconsax.location,
+                    title: 'Geolocation',
+                    subTitle: 'Set recommendation based on location',
+                    trailing: Switch(value: true, onChanged: (value) {}),
+                  ),
+                  SSettingsMenuTile(
+                    icon: Iconsax.security_user,
+                    title: 'Safe Mode',
+                    subTitle: 'Search result is safe for all ages',
+                    trailing: Switch(value: false, onChanged: (value) {}),
+                  ),
+                  SSettingsMenuTile(
+                    icon: Iconsax.image,
+                    title: 'HD Image Quality',
+                    subTitle: 'Set image quality to be seen',
+                    trailing: Switch(value: false, onChanged: (value) {}),
+                  ),
+
+                  //Logout Button
+                  SizedBox(height: SSizes.spaceBtwSections),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      child: const Text('Logout'),
+                    ),
+                  ),
+                  SizedBox(height: SSizes.spaceBtwSections * 2.5),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

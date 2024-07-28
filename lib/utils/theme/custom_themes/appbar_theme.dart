@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
+import '../../constants/colors.dart';
 
-class SAppBarTheme {
+class SAppBarTheme{
   SAppBarTheme._();
 
   static const lightAppBarTheme = AppBarTheme(
@@ -13,11 +13,8 @@ class SAppBarTheme {
     surfaceTintColor: Colors.transparent,
     iconTheme: IconThemeData(color: SColors.black, size: SSizes.iconMd),
     actionsIconTheme: IconThemeData(color: SColors.black, size: SSizes.iconMd),
-    titleTextStyle: TextStyle(
-        fontSize: 18.0, fontWeight: FontWeight.w600, color: SColors.black),
+    titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: SColors.black),
   );
-
-
   static const darkAppBarTheme = AppBarTheme(
     elevation: 0,
     centerTitle: false,
@@ -26,7 +23,6 @@ class SAppBarTheme {
     surfaceTintColor: Colors.transparent,
     iconTheme: IconThemeData(color: SColors.black, size: SSizes.iconMd),
     actionsIconTheme: IconThemeData(color: SColors.white, size: SSizes.iconMd),
-    titleTextStyle: TextStyle(
-        fontSize: 18.0, fontWeight: FontWeight.w600, color: SColors.white),
+    titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: SColors.white),
   );
 }

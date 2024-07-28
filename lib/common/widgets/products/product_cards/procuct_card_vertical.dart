@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopsphere/common/styles/shadows.dart';
 import 'package:shopsphere/common/widgets/custom_shapes/containers/rounded_container.dart';
@@ -7,6 +8,7 @@ import 'package:shopsphere/common/widgets/images/s_rounded_images.dart';
 import 'package:shopsphere/common/widgets/texts/product_price_text.dart';
 import 'package:shopsphere/common/widgets/texts/product_title_text.dart';
 import 'package:shopsphere/common/widgets/texts/s_brand_title_with_verified_icon.dart';
+import 'package:shopsphere/features/shop/screens/product_details/product_detail.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/image_strings.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
@@ -19,12 +21,12 @@ class SProductCardVetical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetail()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          boxShadow: [SShadowStyle.verticalProductShadow],
+          // boxShadow: [SShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(SSizes.productImageRadius),
           color: dark ? const Color.fromARGB(255, 93, 92, 92) : SColors.white,
         ),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopsphere/common/widgets/brand/brand_card.dart';
 import 'package:shopsphere/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:shopsphere/utils/constants/image_strings.dart';
 import 'package:shopsphere/utils/helpers/helper_functions.dart';
-
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shopsphere/common/widgets/brand/brand_show_case.dart';
-import 'package:shopsphere/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:shopsphere/common/widgets/layouts/grid_layout.dart';
 import 'package:shopsphere/common/widgets/products/product_cards/procuct_card_vertical.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';

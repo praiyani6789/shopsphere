@@ -1,40 +1,45 @@
 import 'package:flutter/material.dart';
+import '../../constants/colors.dart';
+import '../../constants/sizes.dart';
 
-class SCheckboxThem {
-  SCheckboxThem._();
+/// Custom Class for Light & Dark Text Themes
+class SCheckboxTheme {
+  SCheckboxTheme._(); // To avoid creating instances
 
-  // Customizable Light Text Theme
+  /// Customizable Light Text Theme
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+    shape:
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(SSizes.xs)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return Colors.white;
+        return SColors.white;
       } else {
-        return Colors.black;
+        return SColors.black;
       }
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return Colors.blue;
+        return SColors.primary;
       } else {
         return Colors.transparent;
       }
     }),
   );
 
-  
+  /// Customizable Dark Text Theme
   static CheckboxThemeData darkCheckboxTheme = CheckboxThemeData(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+    shape:
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(SSizes.xs)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return Colors.white;
+        return SColors.white;
       } else {
-        return Colors.black;
+        return SColors.black;
       }
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return Colors.blue;
+        return SColors.primary;
       } else {
         return Colors.transparent;
       }

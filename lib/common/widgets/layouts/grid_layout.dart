@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopsphere/common/widgets/products/product_cards/procuct_card_vertical.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 
 class SGridLayout extends StatelessWidget {
