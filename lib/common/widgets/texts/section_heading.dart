@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SSectionHeading extends StatelessWidget {
@@ -19,6 +18,7 @@ class SSectionHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title,
             style: Theme.of(context)

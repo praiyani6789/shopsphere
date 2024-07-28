@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopsphere/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:shopsphere/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:shopsphere/common/widgets/layouts/grid_layout.dart';
+import 'package:shopsphere/common/widgets/products/product_cards/procuct_card_vertical.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
 import 'package:shopsphere/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:shopsphere/features/shop/screens/home/widgets/home_categories.dart';
@@ -13,7 +15,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -52,13 +54,29 @@ class HomeScreen extends StatelessWidget {
             //Body in white
             Padding(
               padding: EdgeInsets.all(SSizes.defaultSpace),
-              child: SPromoSlider(
-                banners: [
-                  SImages.banner1,
-                  SImages.banner2,
-                  SImages.banner3,
-                  SImages.banner4,
-                  SImages.banner5
+              child: Column(
+                children: [
+                  //Promo Slider
+                  SPromoSlider(
+                    banners: [
+                      SImages.banner1,
+                      SImages.banner2,
+                      SImages.banner3,
+                      SImages.banner4,
+                      SImages.banner5
+                    ],
+                  ),
+                  SizedBox(height: SSizes.spaceBtwSections),
+
+                  //Heading
+                  SSectionHeading(title: 'Popular Products', onPressed: (){},),
+                  SizedBox(height: SSizes.spaceBtwItems),
+
+                  //Popular Products
+                  SGridLayout(
+                    itemCount: 4,
+                    itemBuilder: (_, index) => const SProductCardVetical(),
+                  ),
                 ],
               ),
             ),

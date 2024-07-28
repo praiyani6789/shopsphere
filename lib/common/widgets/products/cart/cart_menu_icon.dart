@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
@@ -6,7 +5,7 @@ import 'package:shopsphere/utils/constants/colors.dart';
 class SCartCounterIcon extends StatelessWidget {
   const SCartCounterIcon({
     super.key,
-    required this.iconColor,
+    this.iconColor,
     required this.onPressed,
   });
 

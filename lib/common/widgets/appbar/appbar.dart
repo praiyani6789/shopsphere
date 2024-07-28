@@ -10,7 +10,7 @@ class SAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.title,
       this.actions,
       this.leadingIcon,
-      this.showBackArrow = true,
+      this.showBackArrow = false,
       this.leadingOnPressed});
 
   final Widget? title;
