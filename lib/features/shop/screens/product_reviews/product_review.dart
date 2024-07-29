@@ -5,6 +5,7 @@ import 'package:shopsphere/common/widgets/appbar/appbar.dart';
 import 'package:shopsphere/common/widgets/products/ratings/rating_indicator.dart';
 import 'package:shopsphere/features/shop/screens/product_reviews/widgets/progress_indicator_and_rating.dart';
 import 'package:shopsphere/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
+import 'package:shopsphere/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 import 'package:shopsphere/utils/device/device_utility.dart';
@@ -36,8 +37,8 @@ class ProductReviewScreen extends StatelessWidget {
               SizedBox(height: SSizes.spaceBtwSections),
 
               //User Reviews List
-
-              //video-24 13:11
+              UserReviewCard(),
+              UserReviewCard(),
             ],
           ),
         ),

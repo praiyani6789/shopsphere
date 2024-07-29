@@ -7,6 +7,7 @@ import 'package:shopsphere/common/widgets/images/s_circular_images.dart';
 import 'package:shopsphere/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:shopsphere/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
+import 'package:shopsphere/features/personalization/screens/address/address.dart';
 import 'package:shopsphere/features/personalization/screens/profile/profile.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/image_strings.dart';
@@ -54,9 +55,11 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(height: SSizes.spaceBtwItems),
 
                   SSettingsMenuTile(
-                      icon: Iconsax.safe_home,
-                      title: 'My Addresses',
-                      subTitle: 'Set shopping delivery address'),
+                    icon: Iconsax.safe_home,
+                    title: 'My Addresses',
+                    subTitle: 'Set shopping delivery address',
+                    onTap: () => Get.to(() => UserAddressScreen()),
+                  ),
                   SSettingsMenuTile(
                       icon: Iconsax.shopping_cart,
                       title: 'My Cart',
