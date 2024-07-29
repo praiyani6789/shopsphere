@@ -9,6 +9,7 @@ import 'package:shopsphere/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
 import 'package:shopsphere/features/personalization/screens/address/address.dart';
 import 'package:shopsphere/features/personalization/screens/profile/profile.dart';
+import 'package:shopsphere/features/shop/screens/order/order.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/image_strings.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
@@ -65,9 +66,11 @@ class SettingsScreen extends StatelessWidget {
                       title: 'My Cart',
                       subTitle: 'Add, remove products and move to chechout'),
                   SSettingsMenuTile(
-                      icon: Iconsax.bag_tick,
-                      title: 'My Orders',
-                      subTitle: 'In-progress and Complete Orders'),
+                    icon: Iconsax.bag_tick,
+                    title: 'My Orders',
+                    subTitle: 'In-progress and Complete Orders',
+                    onTap: () => Get.to(() => OrderScreen()),
+                  ),
                   SSettingsMenuTile(
                       icon: Iconsax.bank,
                       title: 'My Account',
