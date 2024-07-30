@@ -51,7 +51,7 @@ class SBottomAddToCart extends StatelessWidget {
                 padding: const EdgeInsets.all(SSizes.md),
                 backgroundColor: SColors.black,
                 side: const BorderSide(color: SColors.black)),
-            child: Text('Add to Cart'),
+            child: const Text('Add to Cart'),
           )
         ],
       ),

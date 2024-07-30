@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:shopsphere/common/widgets/chips/choice_chip.dart';
 import 'package:shopsphere/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:shopsphere/common/widgets/texts/product_price_text.dart';
@@ -19,26 +18,26 @@ class SProductAttributes extends StatelessWidget {
       children: [
         //Select Attribute Pricing & desc
         SRoundedContaniner(
-          padding: EdgeInsets.all(SSizes.md),
+          padding: const EdgeInsets.all(SSizes.md),
           backgroundColor:
-              dark ? Color.fromARGB(255, 93, 93, 93) : SColors.grey,
+              dark ? const Color.fromARGB(255, 93, 93, 93) : SColors.grey,
           child: Column(
             children: [
               //Title, Price and Strock Status
               Row(
                 children: [
-                  SSectionHeading(
+                  const SSectionHeading(
                     title: 'Variation',
                     showActionButton: false,
                   ),
-                  SizedBox(width: SSizes.spaceBtwItems),
+                  const SizedBox(width: SSizes.spaceBtwItems),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                          SProductTitleText(title: 'Price : ', smallSize: true),
-                          SizedBox(width: SSizes.spaceBtwItems),
+                          const SProductTitleText(title: 'Price : ', smallSize: true),
+                          const SizedBox(width: SSizes.spaceBtwItems),
 
                           //Actual Price
                           Text(
@@ -48,17 +47,17 @@ class SProductAttributes extends StatelessWidget {
                                 .titleSmall!
                                 .apply(decoration: TextDecoration.lineThrough),
                           ),
-                          SizedBox(width: SSizes.spaceBtwItems),
+                          const SizedBox(width: SSizes.spaceBtwItems),
 
                           //Sale Price
-                          SProductPriceText(price: '750')
+                          const SProductPriceText(price: '750')
                         ],
                       ),
 
                       //Stock
                       Row(
                         children: [
-                          SProductTitleText(title: 'Stock : ', smallSize: true),
+                          const SProductTitleText(title: 'Stock : ', smallSize: true),
                           Text('In Stock',
                               style: Theme.of(context).textTheme.titleMedium),
                         ],
@@ -84,11 +83,11 @@ class SProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SSectionHeading(
+            const SSectionHeading(
               title: 'Colors',
               showActionButton: false,
             ),
-            SizedBox(height: SSizes.spaceBtwItems / 2),
+            const SizedBox(height: SSizes.spaceBtwItems / 2),
             Wrap(
               spacing: 8,
               children: [
@@ -105,11 +104,11 @@ class SProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SSectionHeading(
+            const SSectionHeading(
               title: 'Sizes',
               showActionButton: false,
             ),
-            SizedBox(height: SSizes.spaceBtwItems / 2),
+            const SizedBox(height: SSizes.spaceBtwItems / 2),
             Wrap(
               spacing: 8,
               children: [

@@ -13,19 +13,19 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SAppBar(showBackArrow: true, title: Text('Profile')),
+      appBar: const SAppBar(showBackArrow: true, title: Text('Profile')),
 
       //Body
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(SSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(children: [
             //Profile Picture
             SizedBox(
               width: double.infinity,
               child: Column(
                 children: [
-                  SCircularImage(image: SImages.user, width: 80, height: 80),
+                  const SCircularImage(image: SImages.user, width: 80, height: 80),
                   TextButton(
                       onPressed: () {},
                       child: const Text('Change Profile Picture'))

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shopsphere/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:shopsphere/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:shopsphere/common/widgets/layouts/grid_layout.dart';
 import 'package:shopsphere/common/widgets/products/product_cards/procuct_card_vertical.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
+import 'package:shopsphere/features/shop/screens/all_products/all_products.dart';
 import 'package:shopsphere/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:shopsphere/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:shopsphere/features/shop/screens/home/widgets/promo_slider.dart';
@@ -41,24 +43,24 @@ class HomeScreen extends StatelessWidget {
                             showActionButton: false,
                             textColor: Colors.white,
                           ),
-                          const SizedBox(height: SSizes.spaceBtwItems),
+                          SizedBox(height: SSizes.spaceBtwItems),
 
                           //categarie
                           SHomeCategories(),
                         ],
                       )),
-                  const SizedBox(height: SSizes.spaceBtwSections),
+                  SizedBox(height: SSizes.spaceBtwSections),
                 ],
               ),
             ),
 
             //Body in white
             Padding(
-              padding: EdgeInsets.all(SSizes.defaultSpace),
+              padding: const EdgeInsets.all(SSizes.defaultSpace),
               child: Column(
                 children: [
                   //Promo Slider
-                  SPromoSlider(
+                  const SPromoSlider(
                     banners: [
                       SImages.banner1,
                       SImages.banner2,
@@ -67,14 +69,14 @@ class HomeScreen extends StatelessWidget {
                       SImages.banner5
                     ],
                   ),
-                  SizedBox(height: SSizes.spaceBtwSections),
+                  const SizedBox(height: SSizes.spaceBtwSections),
 
                   //Heading
                   SSectionHeading(
                     title: 'Popular Products',
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const AllProducts()),
                   ),
-                  SizedBox(height: SSizes.spaceBtwItems),
+                  const SizedBox(height: SSizes.spaceBtwItems),
 
                   //Popular Products
                   SGridLayout(

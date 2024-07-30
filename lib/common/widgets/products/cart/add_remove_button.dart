@@ -32,7 +32,7 @@ class SProductQuantityWithAddRemoveButton extends StatelessWidget {
         Text('2',
             style: Theme.of(context).textTheme.titleSmall),
         const SizedBox(width: SSizes.spaceBtwItems),
-        SCircularIcon(
+        const SCircularIcon(
             icon: Iconsax.add,
             width: 32,
             height: 32,

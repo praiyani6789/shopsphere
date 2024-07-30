@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopsphere/common/widgets/appbar/appbar.dart';
 import 'package:shopsphere/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:shopsphere/common/widgets/images/s_circular_images.dart';
 import 'package:shopsphere/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:shopsphere/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
@@ -11,7 +10,6 @@ import 'package:shopsphere/features/personalization/screens/address/address.dart
 import 'package:shopsphere/features/personalization/screens/profile/profile.dart';
 import 'package:shopsphere/features/shop/screens/order/order.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
-import 'package:shopsphere/utils/constants/image_strings.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -47,21 +45,21 @@ class SettingsScreen extends StatelessWidget {
 
             //Body
             Padding(
-              padding: EdgeInsets.all(SSizes.defaultSpace),
+              padding: const EdgeInsets.all(SSizes.defaultSpace),
               child: Column(
                 children: [
                   //Account Settings
-                  SSectionHeading(
+                  const SSectionHeading(
                       title: 'Account Settings', showActionButton: false),
-                  SizedBox(height: SSizes.spaceBtwItems),
+                  const SizedBox(height: SSizes.spaceBtwItems),
 
                   SSettingsMenuTile(
                     icon: Iconsax.safe_home,
                     title: 'My Addresses',
                     subTitle: 'Set shopping delivery address',
-                    onTap: () => Get.to(() => UserAddressScreen()),
+                    onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
-                  SSettingsMenuTile(
+                  const SSettingsMenuTile(
                       icon: Iconsax.shopping_cart,
                       title: 'My Cart',
                       subTitle: 'Add, remove products and move to chechout'),
@@ -69,31 +67,31 @@ class SettingsScreen extends StatelessWidget {
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subTitle: 'In-progress and Complete Orders',
-                    onTap: () => Get.to(() => OrderScreen()),
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
-                  SSettingsMenuTile(
+                  const SSettingsMenuTile(
                       icon: Iconsax.bank,
                       title: 'My Account',
                       subTitle: 'Withdraw balance to registered bank account'),
-                  SSettingsMenuTile(
+                  const SSettingsMenuTile(
                       icon: Iconsax.discount_shape,
                       title: 'My Coupons',
                       subTitle: 'List of all the discounted coupons'),
-                  SSettingsMenuTile(
+                  const SSettingsMenuTile(
                       icon: Iconsax.notification,
                       title: 'Notifications',
                       subTitle: 'Set any kind of notification message'),
-                  SSettingsMenuTile(
+                  const SSettingsMenuTile(
                       icon: Iconsax.security_card,
                       title: 'Account Privacy',
                       subTitle: 'Manage data usage and connected accounts'),
 
                   //App Settings
-                  SizedBox(height: SSizes.spaceBtwSections),
-                  SSectionHeading(
+                  const SizedBox(height: SSizes.spaceBtwSections),
+                  const SSectionHeading(
                       title: 'App Settings', showActionButton: false),
-                  SizedBox(height: SSizes.spaceBtwItems),
-                  SSettingsMenuTile(
+                  const SizedBox(height: SSizes.spaceBtwItems),
+                  const SSettingsMenuTile(
                       icon: Iconsax.document_upload,
                       title: 'Load Data',
                       subTitle: 'Upload Data to your Cloud Firebase'),
@@ -117,7 +115,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   //Logout Button
-                  SizedBox(height: SSizes.spaceBtwSections),
+                  const SizedBox(height: SSizes.spaceBtwSections),
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
@@ -125,7 +123,7 @@ class SettingsScreen extends StatelessWidget {
                       child: const Text('Logout'),
                     ),
                   ),
-                  SizedBox(height: SSizes.spaceBtwSections * 2.5),
+                  const SizedBox(height: SSizes.spaceBtwSections * 2.5),
                 ],
               ),
             )

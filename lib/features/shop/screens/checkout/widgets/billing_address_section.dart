@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 

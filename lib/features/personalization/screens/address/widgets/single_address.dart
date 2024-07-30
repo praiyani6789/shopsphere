@@ -16,7 +16,7 @@ class SSinglrAddress extends StatelessWidget {
     return SRoundedContaniner(
       width: double.infinity,
       showBorder: true,
-      padding: EdgeInsets.all(SSizes.md),
+      padding: const EdgeInsets.all(SSizes.md),
       backgroundColor: selectedAddress
           ? SColors.primary.withOpacity(0.5)
           : Colors.transparent,
@@ -50,13 +50,13 @@ class SSinglrAddress extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: SSizes.sm / 2),
-              Text(
+              const Text(
                 '(+91) 9409370595',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: SSizes.sm / 2),
-              Text(
+              const Text(
                 'R-104, Navkar Palace, Surat, Gujarat, India.',
                 softWrap: true,
               ),

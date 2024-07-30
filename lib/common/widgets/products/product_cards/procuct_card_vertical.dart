@@ -26,9 +26,9 @@ class SProductCardVetical extends StatelessWidget {
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          // boxShadow: [SShadowStyle.verticalProductShadow],
+          boxShadow: [SShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(SSizes.productImageRadius),
-          color: dark ? const Color.fromARGB(255, 93, 92, 92) : SColors.white,
+          color: dark ? SColors.darkerGrey : SColors.white,
         ),
         child: Column(
           children: [
@@ -40,7 +40,7 @@ class SProductCardVetical extends StatelessWidget {
               child: Stack(
                 children: [
                   //Thumbnail Image
-                  SRoundedImage(
+                  const SRoundedImage(
                       imageUrl: SImages.productImage1, applyImageRadius: true),
 
                   //Sale Tag
@@ -76,16 +76,16 @@ class SProductCardVetical extends StatelessWidget {
             const SizedBox(height: SSizes.spaceBtwItems / 2),
 
             //Details
-            Padding(
-              padding: const EdgeInsets.only(left: SSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: SSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SProductTitleText(
+                  SProductTitleText(
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
-                  const SizedBox(height: SSizes.spaceBtwItems / 2),
+                  SizedBox(height: SSizes.spaceBtwItems / 2),
                   SBrandTitleWithVerifiedIcon(
                     title: 'Nike',
                   ),
@@ -93,6 +93,8 @@ class SProductCardVetical extends StatelessWidget {
               ),
             ),
             const Spacer(),
+
+            //Price Tag
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -26,11 +26,11 @@ class SProductImageSlider extends StatelessWidget {
         child: Stack(
           children: [
             //Main Large Image
-            SizedBox(
+            const SizedBox(
                 height: 400,
                 child: Padding(
                   padding:
-                      const EdgeInsets.all(SSizes.productImageRadius * 2),
+                      EdgeInsets.all(SSizes.productImageRadius * 2),
                   child: Center(
                       child: Image(
                           image: AssetImage(SImages.productImage5))),

@@ -21,31 +21,31 @@ class UserReviewCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                     backgroundImage: AssetImage(SImages.userProfileImage1)),
-                SizedBox(width: SSizes.spaceBtwItems),
+                const SizedBox(width: SSizes.spaceBtwItems),
                 Text('Deep Gondaliya',
                     style: Theme.of(context).textTheme.titleLarge)
               ],
             ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
+            IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
           ],
         ),
-        SizedBox(height: SSizes.spaceBtwItems),
+        const SizedBox(height: SSizes.spaceBtwItems),
 
         //Review
         Row(
           children: [
-            SRatingBarIndicator(rating: 4),
-            SizedBox(width: SSizes.spaceBtwItems),
+            const SRatingBarIndicator(rating: 4),
+            const SizedBox(width: SSizes.spaceBtwItems),
             Text(
               '01 Nov, 2023',
               style: Theme.of(context).textTheme.bodyMedium,
             )
           ],
         ),
-        SizedBox(height: SSizes.spaceBtwItems),
-        ReadMoreText(
+        const SizedBox(height: SSizes.spaceBtwItems),
+        const ReadMoreText(
           'The user interface of the app is quite intuitive. I was able to navigate and make purchases seamlessly. Great job!',
           trimLines: 2,
           trimMode: TrimMode.Line,
@@ -60,13 +60,13 @@ class UserReviewCard extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: SColors.primary),
         ),
-        SizedBox(height: SSizes.spaceBtwItems),
+        const SizedBox(height: SSizes.spaceBtwItems),
 
         //Company Review
         SRoundedContaniner(
           backgroundColor: dark ? SColors.darkGrey : SColors.grey,
           child: Padding(
-              padding: EdgeInsets.all(SSizes.md),
+              padding: const EdgeInsets.all(SSizes.md),
               child: Column(
                 children: [
                   Row(
@@ -78,8 +78,8 @@ class UserReviewCard extends StatelessWidget {
                           style: Theme.of(context).textTheme.bodyMedium)
                     ],
                   ),
-                  SizedBox(height: SSizes.spaceBtwItems),
-                  ReadMoreText(
+                  const SizedBox(height: SSizes.spaceBtwItems),
+                  const ReadMoreText(
                     'The user interface of the app is quite intuitive. I was able to navigate and make purchases seamlessly. Great job!',
                     trimLines: 2,
                     trimMode: TrimMode.Line,

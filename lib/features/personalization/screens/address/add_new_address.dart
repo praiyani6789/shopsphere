@@ -9,7 +9,7 @@ class AddNewAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SAppBar(showBackArrow: true, title: Text('Add new Address')),
+      appBar: const SAppBar(showBackArrow: true, title: Text('Add new Address')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(SSizes.defaultSpace),
@@ -68,7 +68,7 @@ class AddNewAddressScreen extends StatelessWidget {
                 const SizedBox(height: SSizes.defaultSpace),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(onPressed: () {}, child: Text('Save')),
+                  child: ElevatedButton(onPressed: () {}, child: const Text('Save')),
                 )
               ],
             ),

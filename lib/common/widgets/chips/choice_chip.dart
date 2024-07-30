@@ -21,7 +21,7 @@ class SChoiceChip extends StatelessWidget {
     return Theme(
       data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
       child: ChoiceChip(
-        label: isColor ? SizedBox() : Text(text),
+        label: isColor ? const SizedBox() : Text(text),
         selected: selected,
         onSelected: onSelected,
         labelStyle: TextStyle(color: selected ? SColors.white : null),
@@ -31,9 +31,9 @@ class SChoiceChip extends StatelessWidget {
                 height: 50,
                 backgroundColor: SHelperFunctions.getColor(text)!)
             : null,
-        labelPadding: isColor ? EdgeInsets.all(0) : null,
-        padding: isColor ? EdgeInsets.all(0) : null,
-        shape: isColor ? CircleBorder() : null,
+        labelPadding: isColor ? const EdgeInsets.all(0) : null,
+        padding: isColor ? const EdgeInsets.all(0) : null,
+        shape: isColor ? const CircleBorder() : null,
         backgroundColor: isColor ? SHelperFunctions.getColor(text)! : null,
       ),
     );

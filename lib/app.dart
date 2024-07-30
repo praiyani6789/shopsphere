@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopsphere/bindings/general_bindings.dart';
 import 'package:shopsphere/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -13,7 +15,10 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: SAppTheme.ligthTheme,
       darkTheme: SAppTheme.dartTheme,
-      home: const OnBoardingScreen(),
+      initialBinding: GeneralBindings(),
+      home: const Scaffold(
+          backgroundColor: SColors.primary,
+          body: Center(child: CircularProgressIndicator(color: SColors.white))),
     );
   }
 }

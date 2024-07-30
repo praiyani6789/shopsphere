@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shopsphere/common/widgets/appbar/appbar.dart';
 import 'package:shopsphere/common/widgets/appbar/tabbar.dart';
 import 'package:shopsphere/common/widgets/brand/brand_card.dart';
@@ -6,6 +7,7 @@ import 'package:shopsphere/common/widgets/custom_shapes/containers/search_contai
 import 'package:shopsphere/common/widgets/layouts/grid_layout.dart';
 import 'package:shopsphere/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
+import 'package:shopsphere/features/shop/screens/brand/all_brands.dart';
 import 'package:shopsphere/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
@@ -57,14 +59,16 @@ class StoreScreen extends StatelessWidget {
 
                       //Featured Brands
                       SSectionHeading(
-                          title: 'Featured Brands', onPressed: () {}),
+                          title: 'Featured Brands',
+                          onPressed: () =>
+                              Get.to(() => const AllBrandsScreen())),
                       const SizedBox(height: SSizes.spaceBtwItems / 1.5),
 
                       SGridLayout(
                           itemCount: 4,
                           mainAxisExtent: 80,
                           itemBuilder: (_, index) {
-                            return SBrandCard(showBorder: true);
+                            return const SBrandCard(showBorder: true);
                           })
                     ],
                   ),

@@ -21,7 +21,7 @@ class SCategoryTab extends StatelessWidget {
           child: Column(
             children: [
               //Brand
-              SBrandShowcase(images: [
+              const SBrandShowcase(images: [
                 SImages.productImage1,
                 SImages.productImage2,
                 SImages.productImage3

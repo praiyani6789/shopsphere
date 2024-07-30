@@ -19,43 +19,43 @@ class ProductDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = SHelperFunctions.isDarkMode(context);
     return Scaffold(
-      bottomNavigationBar: SBottomAddToCart(),
+      bottomNavigationBar: const SBottomAddToCart(),
       body: SingleChildScrollView(
           child: Column(
         children: [
           //1-Product Image Slider
-          SProductImageSlider(),
+          const SProductImageSlider(),
 
           //2-Product details
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
                 right: SSizes.defaultSpace,
                 left: SSizes.defaultSpace,
                 bottom: SSizes.defaultSpace),
             child: Column(
               children: [
                 //Rating & Share Button
-                SRatingAndShare(),
+                const SRatingAndShare(),
 
                 //Price, Title, Stock & Brand
-                SProductMetaData(),
+                const SProductMetaData(),
 
                 //Attributes
-                SProductAttributes(),
+                const SProductAttributes(),
                 const SizedBox(height: SSizes.spaceBtwSections),
 
                 //chechout Button
                 SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                        onPressed: () {}, child: Text('Checkout'))),
+                        onPressed: () {}, child: const Text('Checkout'))),
                 const SizedBox(height: SSizes.spaceBtwSections),
 
                 //Description
                 const SSectionHeading(
                     title: 'Description', showActionButton: false),
                 const SizedBox(height: SSizes.spaceBtwItems),
-                ReadMoreText(
+                const ReadMoreText(
                   'This is a Product description for Blue Nike Sleeve less vest. There are more things that can be added but i am not create database so not added currently',
                   trimLines: 2,
                   trimMode: TrimMode.Line,
@@ -73,12 +73,12 @@ class ProductDetail extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SSectionHeading(
+                    const SSectionHeading(
                         title: 'Review (138)', showActionButton: false),
                     IconButton(
                         onPressed: () =>
                             Get.to(() => const ProductReviewScreen()),
-                        icon: Icon(Iconsax.arrow_right_3)),
+                        icon: const Icon(Iconsax.arrow_right_3)),
                   ],
                 ),
                 const SizedBox(height: SSizes.spaceBtwSections),

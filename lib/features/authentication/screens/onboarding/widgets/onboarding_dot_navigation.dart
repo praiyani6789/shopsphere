@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopsphere/features/authentication/controllers/onboarding_controller.dart';
+import 'package:shopsphere/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 import 'package:shopsphere/utils/device/device_utility.dart';

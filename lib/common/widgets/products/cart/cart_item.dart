@@ -21,7 +21,7 @@ class SCartItem extends StatelessWidget {
           imageUrl: SImages.productImage1,
           width: 60,
           height: 60,
-          padding: EdgeInsets.all(SSizes.sm),
+          padding: const EdgeInsets.all(SSizes.sm),
           backgroundColor: SHelperFunctions.isDarkMode(context)
               ? SColors.darkGrey
               : SColors.light,
@@ -33,8 +33,8 @@ class SCartItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SBrandTitleWithVerifiedIcon(title: 'Nike'),
-            Flexible(
+            const SBrandTitleWithVerifiedIcon(title: 'Nike'),
+            const Flexible(
               child:
                   SProductTitleText(title: 'Black Sports shoes', maxLines: 1),
             ),

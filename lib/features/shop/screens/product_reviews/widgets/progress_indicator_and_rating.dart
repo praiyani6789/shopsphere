@@ -28,7 +28,7 @@ class SRatingProgressIndicator extends StatelessWidget {
               value: value,
               minHeight: 11,
               backgroundColor: SColors.grey,
-              valueColor: AlwaysStoppedAnimation(SColors.primary),
+              valueColor: const AlwaysStoppedAnimation(SColors.primary),
               borderRadius: BorderRadius.circular(7),
             ),
           ),

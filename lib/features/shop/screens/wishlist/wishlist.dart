@@ -23,7 +23,7 @@ class FavouriteScreen extends StatelessWidget {
           ]),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(SSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             children: [
               SGridLayout(

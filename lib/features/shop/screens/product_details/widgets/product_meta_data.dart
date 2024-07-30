@@ -47,7 +47,7 @@ class SProductMetaData extends StatelessWidget {
                   .apply(decoration: TextDecoration.lineThrough),
             ),
             const SizedBox(width: SSizes.spaceBtwItems),
-            SProductPriceText(price: '750', isLarge: true)
+            const SProductPriceText(price: '750', isLarge: true)
           ],
         ),
         const SizedBox(height: SSizes.spaceBtwItems / 1.5),

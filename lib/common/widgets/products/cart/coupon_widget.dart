@@ -15,14 +15,14 @@ class SCouponCode extends StatelessWidget {
     return SRoundedContaniner(
       showBorder: true,
       backgroundColor: dark ? SColors.dark : SColors.white,
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
           top: SSizes.sm, bottom: SSizes.sm, right: SSizes.sm, left: SSizes.md),
       child: Row(
         children: [
           //Textfield
           Flexible(
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Have a promo code? Enter here',
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -37,7 +37,6 @@ class SCouponCode extends StatelessWidget {
           SizedBox(
             width: 80,
             child: ElevatedButton(
-              child: const Text('Apply'),
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                   foregroundColor: dark
@@ -45,6 +44,7 @@ class SCouponCode extends StatelessWidget {
                       : SColors.dark.withOpacity(0.5),
                   backgroundColor: Colors.grey.withOpacity(0.2),
                   side: BorderSide(color: Colors.grey.withOpacity(0.1))),
+              child: const Text('Apply'),
             ),
           )
         ],

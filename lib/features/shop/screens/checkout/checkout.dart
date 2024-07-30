@@ -28,23 +28,23 @@ class CheckoutScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(SSizes.defaultSpace),
+          padding: const EdgeInsets.all(SSizes.defaultSpace),
           child: Column(
             children: [
               //Item in Cart
-              SCartItems(showAddRemoveButton: false),
-              SizedBox(height: SSizes.spaceBtwSections),
+              const SCartItems(showAddRemoveButton: false),
+              const SizedBox(height: SSizes.spaceBtwSections),
 
               //Coupon TextField
-              SCouponCode(),
-              SizedBox(height: SSizes.spaceBtwSections),
+              const SCouponCode(),
+              const SizedBox(height: SSizes.spaceBtwSections),
 
               //Billing Section
               SRoundedContaniner(
                 showBorder: true,
                 padding: const EdgeInsets.all(SSizes.md),
                 backgroundColor: dark ? SColors.black : SColors.white,
-                child: Column(
+                child: const Column(
                   children: [
                     //Pricing
                     SBillingAmountSection(),
@@ -69,7 +69,7 @@ class CheckoutScreen extends StatelessWidget {
       ),
       //Checkout Button
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(SSizes.defaultSpace),
+        padding: const EdgeInsets.all(SSizes.defaultSpace),
         child: ElevatedButton(
             onPressed: () => Get.to(() => SuccessScreen(
                   image: SImages.successfulPaymentIcon,

@@ -17,7 +17,7 @@ class SOrderListItems extends StatelessWidget {
       separatorBuilder: (_, __) => const SizedBox(height: SSizes.spaceBtwItems),
       itemBuilder: (_, __) => SRoundedContaniner(
         showBorder: true,
-        padding: EdgeInsets.all(SSizes.md),
+        padding: const EdgeInsets.all(SSizes.md),
         backgroundColor: dark ? SColors.dark : SColors.light,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -26,8 +26,8 @@ class SOrderListItems extends StatelessWidget {
             Row(
               children: [
                 //Icon
-                Icon(Iconsax.ship),
-                SizedBox(width: SSizes.spaceBtwItems / 2),
+                const Icon(Iconsax.ship),
+                const SizedBox(width: SSizes.spaceBtwItems / 2),
 
                 //Status & Date
                 Expanded(
@@ -51,10 +51,10 @@ class SOrderListItems extends StatelessWidget {
                 //Icon
                 IconButton(
                     onPressed: () {},
-                    icon: Icon(Iconsax.arrow_right_34, size: SSizes.iconSm))
+                    icon: const Icon(Iconsax.arrow_right_34, size: SSizes.iconSm))
               ],
             ),
-            SizedBox(height: SSizes.spaceBtwItems),
+            const SizedBox(height: SSizes.spaceBtwItems),
 
             //Row--2
             Row(
@@ -63,8 +63,8 @@ class SOrderListItems extends StatelessWidget {
                   child: Row(
                     children: [
                       //Icon
-                      Icon(Iconsax.tag),
-                      SizedBox(width: SSizes.spaceBtwItems / 2),
+                      const Icon(Iconsax.tag),
+                      const SizedBox(width: SSizes.spaceBtwItems / 2),
 
                       //Status & Date
                       Expanded(
@@ -86,8 +86,8 @@ class SOrderListItems extends StatelessWidget {
                   child: Row(
                     children: [
                       //Icon
-                      Icon(Iconsax.calendar),
-                      SizedBox(width: SSizes.spaceBtwItems / 2),
+                      const Icon(Iconsax.calendar),
+                      const SizedBox(width: SSizes.spaceBtwItems / 2),
 
                       //Status & Date
                       Expanded(

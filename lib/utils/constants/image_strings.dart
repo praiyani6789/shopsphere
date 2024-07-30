@@ -2,6 +2,10 @@
 
 /// This class contains all the App Images in String formats.
 class SImages {
+  // -- Animation
+  static const String docerAnimation =
+      'assets/images/animations/141594-animation-of-docer.json';
+
   // -- App Logos
   static const String darkAppLogo =
       "assets/logos/shopsphere-splash-logo-black.png";
