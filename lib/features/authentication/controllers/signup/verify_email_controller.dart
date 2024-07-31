@@ -38,7 +38,7 @@ class VerifyEmailController extends GetxController {
       if (user?.emailVerified ?? false) {
         timer.cancel();
         Get.off(() => SuccessScreen(
-              image: SImages.successfillyRegisterAnimation,
+              image: SImages.successfullyRegisterAnimation,
               title: STexts.yourAccountCreatedTitle,
               subtitle: STexts.yourAccountCreatedSubTitle,
               onPressed: () =>
@@ -53,7 +53,7 @@ class VerifyEmailController extends GetxController {
     final currentUser = FirebaseAuth.instance.currentUser;
     if (currentUser != null && currentUser.emailVerified) {
       Get.off(() => SuccessScreen(
-            image: SImages.successfillyRegisterAnimation,
+            image: SImages.successfullyRegisterAnimation,
             title: STexts.yourAccountCreatedTitle,
             subtitle: STexts.yourAccountCreatedSubTitle,
             onPressed: () => AuthenticationRepository.instance.screenRedirect(),

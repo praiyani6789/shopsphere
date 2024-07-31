@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shopsphere/common/styles/spacing_styles.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 import 'package:shopsphere/utils/constants/text_strings.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required this.image, required this.title, required this.subtitle, required this.onPressed});
+  const SuccessScreen(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.subtitle,
+      required this.onPressed});
 
   final String image, title, subtitle;
   final VoidCallback onPressed;
@@ -19,13 +25,9 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
               //Image
-              Image(
-                image: AssetImage(image),
-                width: SHelperFunctions.screenWidth() * 0.6,
-              ),
-              const SizedBox(
-                height: SSizes.spaceBtwSections,
-              ),
+              Lottie.asset(image,
+                  width: MediaQuery.of(context).size.width * 0.6),
+              const SizedBox(height: SSizes.spaceBtwSections),
 
               //Title & Subtitle
               Text(title,

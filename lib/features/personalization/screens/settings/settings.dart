@@ -6,6 +6,7 @@ import 'package:shopsphere/common/widgets/custom_shapes/containers/primary_heade
 import 'package:shopsphere/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:shopsphere/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
+import 'package:shopsphere/data/repositories/authentication/authentication_repository.dart';
 import 'package:shopsphere/features/personalization/screens/address/address.dart';
 import 'package:shopsphere/features/personalization/screens/profile/profile.dart';
 import 'package:shopsphere/features/shop/screens/order/order.dart';
@@ -119,7 +120,9 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        AuthenticationRepository.instance.logout();
+                      },
                       child: const Text('Logout'),
                     ),
                   ),
