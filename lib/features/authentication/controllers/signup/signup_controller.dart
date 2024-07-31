@@ -1,5 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopsphere/data/repositories/authentication/authentication_repository.dart';
+import 'package:shopsphere/data/repositories/user/user_repository.dart';
+import 'package:shopsphere/features/authentication/screens/signup/verify_email.dart';
+import 'package:shopsphere/features/personalization/models/user_model.dart';
 import 'package:shopsphere/utils/constants/image_strings.dart';
 import 'package:shopsphere/utils/helpers/network_manager.dart';
 import 'package:shopsphere/utils/popups/full_screen_loader.dart';
@@ -20,7 +25,7 @@ class SignupController extends GetxController {
   GlobalKey<FormState> signupFormkey = GlobalKey<FormState>();
 
   //SIGNUP
-  Future<void> signup() async {
+  void signup() async {
     try {
       //Start Loading
       SFullScreenLoader.openLoadingDialog(
@@ -42,12 +47,33 @@ class SignupController extends GetxController {
         return;
       }
 
-      //video-35  28:25
+      //Register iser in firebase
+      final userCredential = await AuthenticationRepository.instance
+          .registerWithEmailAndPassword(
+              email.text.trim(), password.text.trim());
+
+      final newUser = UserModel(
+          id: userCredential.user!.uid,
+          firstName: firstName.text.trim(),
+          lastName: lastName.text.trim(),
+          username: username.text.trim(),
+          email: email.text.trim(),
+          phoneNumber: phoneNumber.text.trim(),
+          profilePicture: '');
+
+      final userRepository = Get.put(UserRepository());
+      await userRepository.saveUserRecord(newUser);
+
+      SFullScreenLoader.stopLoading();
+
+      SLoaders.successSnackBar(
+          title: 'Congratulations',
+          message: 'Your account has been created! Verify email to continue.');
+
+      Get.to(() => const VerifyEmailScreen());
     } catch (e) {
       //Show error
       SLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    } finally {
-      SFullScreenLoader.stopLoading();
     }
   }
 }
