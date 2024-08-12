@@ -7,14 +7,14 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:270823573439:android:9e51f54c8c2e7674d7030a",
+        "mobilesdk_app_id": "1:270823573439:android:f58dac10dbbe71ebd7030a",
         "android_client_info": {
           "package_name": "com.example.shopsphere"
         }
       },
       "oauth_client": [
         {
-          "client_id": "270823573439-22u2v1ng9ugpuqq742p08u9e55pp5jmu.apps.googleusercontent.com",
+          "client_id": "270823573439-qgfc0kfcnbv26uccmpvlve8ff5mto9tr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.shopsphere",

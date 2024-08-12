@@ -26,18 +26,10 @@ class SignupController extends GetxController {
 
   //SIGNUP
   void signup() async {
+    //Form Validation
+    if (!signupFormkey.currentState!.validate()) return;
+
     try {
-      //Start Loading
-      SFullScreenLoader.openLoadingDialog(
-          'We are processing your information...', SImages.docerAnimation);
-
-      //Check Internet Connectivity
-      final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) return;
-
-      //Form Validation
-      if (!signupFormkey.currentState!.validate()) return;
-
       //Privacy Policy check
       if (!privacyPolicy.value) {
         SLoaders.warningSnackBar(
@@ -47,7 +39,15 @@ class SignupController extends GetxController {
         return;
       }
 
-      //Register iser in firebase
+      //Check Internet Connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) return;
+
+      //Start Loading
+      SFullScreenLoader.openLoadingDialog(
+          'We are processing your information...', SImages.docerAnimation);
+
+      //Register user in firebase
       final userCredential = await AuthenticationRepository.instance
           .registerWithEmailAndPassword(
               email.text.trim(), password.text.trim());

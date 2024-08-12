@@ -29,11 +29,11 @@ class LoginController extends GetxController {
   //Email And Pass SignIn
   Future<void> emailAndPasswordSignIn() async {
     try {
-      //Start Loding
+      //Start Loading
       SFullScreenLoader.openLoadingDialog(
           'Logging you in...', SImages.docerAnimation);
 
-      //Chech Net
+      //Check Net
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         SFullScreenLoader.stopLoading();
@@ -53,7 +53,7 @@ class LoginController extends GetxController {
       }
 
       //Login user using Email & password
-      final UserCredentials = await AuthenticationRepository.instance
+      final userCredentials = await AuthenticationRepository.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       //Remove Loader
@@ -70,7 +70,7 @@ class LoginController extends GetxController {
   //Google SignIn
   Future<void> googleSignIn() async {
     try {
-      //Start Loding
+      //Start Loading
       SFullScreenLoader.openLoadingDialog(
           'Logging you in...', SImages.docerAnimation);
 
@@ -82,17 +82,17 @@ class LoginController extends GetxController {
       }
 
       //Google Auth
-      final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
+      final userCredentials =
+          await AuthenticationRepository.instance.signInWithGoogle();
 
       //Save User Record
       await userController.saveUserRecord(userCredentials);
 
       //Remove Loader
-      SFullScreenLoader.stopLoading(); 
+      SFullScreenLoader.stopLoading();
 
       //Redirect
       AuthenticationRepository.instance.screenRedirect();
-
     } catch (e) {
       SFullScreenLoader.stopLoading();
       SLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
