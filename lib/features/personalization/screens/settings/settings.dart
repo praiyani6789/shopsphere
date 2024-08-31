@@ -63,7 +63,7 @@ class SettingsScreen extends StatelessWidget {
                   const SSettingsMenuTile(
                       icon: Iconsax.shopping_cart,
                       title: 'My Cart',
-                      subTitle: 'Add, remove products and move to chechout'),
+                      subTitle: 'Add, remove products and move to checkout'),
                   SSettingsMenuTile(
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',

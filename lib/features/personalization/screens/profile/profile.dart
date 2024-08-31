@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopsphere/common/widgets/appbar/appbar.dart';
 import 'package:shopsphere/common/widgets/images/s_circular_images.dart';
@@ -7,11 +8,15 @@ import 'package:shopsphere/features/personalization/screens/profile/widgets/prof
 import 'package:shopsphere/utils/constants/image_strings.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 
+import '../../controllers/user_controller.dart';
+import 'widgets/change_name.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
       appBar: const SAppBar(showBackArrow: true, title: Text('Profile')),
 
@@ -25,7 +30,8 @@ class ProfileScreen extends StatelessWidget {
               width: double.infinity,
               child: Column(
                 children: [
-                  const SCircularImage(image: SImages.user, width: 80, height: 80),
+                  const SCircularImage(
+                      image: SImages.user, width: 80, height: 80),
                   TextButton(
                       onPressed: () {},
                       child: const Text('Change Profile Picture'))
@@ -44,9 +50,13 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: SSizes.spaceBtwItems),
 
             SProfileMenu(
-                title: 'Name', value: 'Prince Raiyani', onPressed: () {}),
+                title: 'Name',
+                value: controller.user.value.fullName,
+                onPressed: () => Get.to(() => const ChangeName())),
             SProfileMenu(
-                title: 'Username', value: 'prince_raiyani', onPressed: () {}),
+                title: 'Username',
+                value: controller.user.value.username,
+                onPressed: () {}),
 
             const SizedBox(height: SSizes.spaceBtwItems),
             const Divider(),
@@ -59,15 +69,17 @@ class ProfileScreen extends StatelessWidget {
 
             SProfileMenu(
                 title: 'User ID',
-                value: '56789',
+                value: controller.user.value.id,
                 icon: Iconsax.copy,
                 onPressed: () {}),
             SProfileMenu(
                 title: 'E-mail',
-                value: 'prince.raiyani10@gmail.com',
+                value: controller.user.value.email,
                 onPressed: () {}),
             SProfileMenu(
-                title: 'Phone', value: '+91-9409370595', onPressed: () {}),
+                title: 'Phone',
+                value: controller.user.value.phoneNumber,
+                onPressed: () {}),
             SProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
             SProfileMenu(
                 title: 'Date of Birth',
@@ -78,7 +90,7 @@ class ProfileScreen extends StatelessWidget {
 
             Center(
               child: TextButton(
-                onPressed: () {},
+                onPressed: () => controller.deleteAccountWarningPopup(),
                 child: const Text('Close Account',
                     style: TextStyle(color: Colors.red)),
               ),

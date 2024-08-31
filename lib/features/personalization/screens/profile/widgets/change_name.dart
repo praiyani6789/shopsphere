@@ -6,7 +6,7 @@ import 'package:shopsphere/features/personalization/controllers/update_name_cont
 import 'package:shopsphere/utils/constants/sizes.dart';
 import 'package:shopsphere/utils/validator/validation.dart';
 
-import '../../../../utils/constants/text_strings.dart';
+import '../../../../../utils/constants/text_strings.dart';
 
 class ChangeName extends StatelessWidget {
   const ChangeName({super.key});

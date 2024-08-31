@@ -36,7 +36,7 @@ class UserModel {
     String lastName = nameParts.length > 1 ? nameParts[1].toLowerCase() : "";
 
     String camelCaseUsername = "$firstName$lastName";
-    String usernameWithPrefix = "cwt_$camelCaseUsername";
+    String usernameWithPrefix = "rpg_$camelCaseUsername";
     return usernameWithPrefix;
   }
 
@@ -60,19 +60,21 @@ class UserModel {
     };
   }
 
-  // factory UserModel.fromSnapshot(
-  //     DocumentSnapshot<Map<String, dynamic>> document) {
-  //   if (document.data() != null) {
-  //     final data = document.data()!;
-  //     return UserModel(
-  //       id: document.id,
-  //       firstName: data['FirstName'] ?? '',
-  //       lastName: data['LastName'] ?? '',
-  //       username: data['Username'] ?? '',
-  //       email: data['Email'] ?? '',
-  //       phoneNumber: data['PhoneNumber'] ?? '',
-  //       profilePicture: data['ProfilePicture'] ?? '',
-  //     );
-  //   }
-  // }
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!;
+      return UserModel(
+        id: document.id,
+        firstName: data['FirstName'] ?? '',
+        lastName: data['LastName'] ?? '',
+        username: data['Username'] ?? '',
+        email: data['Email'] ?? '',
+        phoneNumber: data['PhoneNumber'] ?? '',
+        profilePicture: data['ProfilePicture'] ?? '',
+      );
+    } else {
+      return UserModel.empty();
+    }
+  }
 }
