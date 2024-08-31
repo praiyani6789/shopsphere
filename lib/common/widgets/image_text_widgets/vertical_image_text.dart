@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopsphere/common/widgets/images/s_circular_images.dart';
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
 import 'package:shopsphere/utils/helpers/helper_functions.dart';
@@ -11,11 +12,13 @@ class SVerticalImageText extends StatelessWidget {
     this.textColor = SColors.white,
     this.backgroundColor,
     this.onTap,
+    this.isNetworImage = true,
   });
 
   final String image, title;
   final Color textColor;
   final Color? backgroundColor;
+  final bool isNetworImage;
   final void Function()? onTap;
 
   @override
@@ -27,39 +30,35 @@ class SVerticalImageText extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(right: SSizes.spaceBtwItems),
         child: Column(
+          mainAxisSize: MainAxisSize.min, // Adjust Column size
           children: [
-            //Icon
-            Container(
-              width: 56,
-              height: 56,
-              padding: const EdgeInsets.all(SSizes.sm),
-              decoration: BoxDecoration(
-                color:
-                    backgroundColor ?? (dark ? SColors.black : SColors.white),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Center(
-                  child: Image(
-                image: AssetImage(image),
-                fit: BoxFit.cover,
-                color: dark ? SColors.light : SColors.dark,
-              )),
+            // Icon
+            SCircularImage(
+              image: image,
+              fit: BoxFit.fitWidth,
+              padding: SSizes.sm * 1.4,
+              isNetworkImage: isNetworImage,
+              backgroundColor: backgroundColor,
+              overlayColor: dark ? SColors.light : SColors.dark,
             ),
 
-            //Text
+            // Text
             const SizedBox(height: SSizes.spaceBtwItems / 2),
             SizedBox(
               width: 55,
-              child: Text(
-                title,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelMedium!
-                    .apply(color: textColor),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+              child: Align(
+                alignment: Alignment.center, // Center text within the SizedBox
+                child: Text(
+                  title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium!
+                      .apply(color: textColor),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -6,7 +6,7 @@ import 'package:shopsphere/features/personalization/controllers/user_controller.
 import 'package:shopsphere/utils/constants/colors.dart';
 import 'package:shopsphere/utils/constants/text_strings.dart';
 
-import '../../../../../utils/popups/shimmer.dart';
+import '../../../../../common/widgets/shimmers/shimmer.dart';
 
 class SHomeAppBar extends StatelessWidget {
   const SHomeAppBar({

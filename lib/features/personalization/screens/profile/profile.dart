@@ -7,6 +7,7 @@ import 'package:shopsphere/common/widgets/texts/section_heading.dart';
 import 'package:shopsphere/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:shopsphere/utils/constants/image_strings.dart';
 import 'package:shopsphere/utils/constants/sizes.dart';
+import 'package:shopsphere/common/widgets/shimmers/shimmer.dart';
 
 import '../../controllers/user_controller.dart';
 import 'widgets/change_name.dart';
@@ -30,10 +31,21 @@ class ProfileScreen extends StatelessWidget {
               width: double.infinity,
               child: Column(
                 children: [
-                  const SCircularImage(
-                      image: SImages.user, width: 80, height: 80),
+                  Obx(() {
+                    final networkImage = controller.user.value.profilePicture;
+                    final image =
+                        networkImage.isNotEmpty ? networkImage : SImages.user;
+                    return controller.imageUploading.value
+                        ? const SShimmerEffect(
+                            width: 80, height: 80, radius: 80)
+                        : SCircularImage(
+                            image: image,
+                            width: 80,
+                            height: 80,
+                            isNetworkImage: networkImage.isNotEmpty);
+                  }),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () => controller.uploadProfilePicture(),
                       child: const Text('Change Profile Picture'))
                 ],
               ),

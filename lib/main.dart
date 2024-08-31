@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shopsphere/app.dart';
 import 'package:shopsphere/data/repositories/authentication/authentication_repository.dart';
+import 'package:shopsphere/data/repositories/user/user_repository.dart';
 import 'package:shopsphere/firebase_options.dart';
 
 Future<void> main() async {
@@ -18,10 +19,12 @@ Future<void> main() async {
   //Await splash untill other items Load
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  //Initialized Firebase & Auth repo
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-      .then(
-    (FirebaseApp value) => Get.put(AuthenticationRepository()),
+  // Initialize Firebase & repositories
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then(
+    (FirebaseApp value) {
+      Get.put(AuthenticationRepository());
+      Get.put(UserRepository());
+    },
   );
   runApp(const App());
 }

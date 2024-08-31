@@ -60,15 +60,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   //Promo Slider
-                  const SPromoSlider(
-                    banners: [
-                      SImages.banner1,
-                      SImages.banner2,
-                      SImages.banner3,
-                      SImages.banner4,
-                      SImages.banner5
-                    ],
-                  ),
+                  const SPromoSlider(),
                   const SizedBox(height: SSizes.spaceBtwSections),
 
                   //Heading

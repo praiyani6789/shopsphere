@@ -3,12 +3,15 @@ import 'package:shopsphere/common/widgets/brand/brand_show_case.dart';
 import 'package:shopsphere/common/widgets/layouts/grid_layout.dart';
 import 'package:shopsphere/common/widgets/products/product_cards/procuct_card_vertical.dart';
 import 'package:shopsphere/common/widgets/texts/section_heading.dart';
+import 'package:shopsphere/features/shop/models/category_model.dart';
 
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class SCategoryTab extends StatelessWidget {
-  const SCategoryTab({super.key});
+  const SCategoryTab({super.key, required this.category});
+
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
